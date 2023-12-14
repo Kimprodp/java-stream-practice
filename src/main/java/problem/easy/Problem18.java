@@ -1,6 +1,10 @@
 package problem.easy;
 
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.PriorityQueue;
 import java.util.Queue;
+import java.util.stream.Collectors;
 
 public class Problem18 {
 
@@ -11,7 +15,8 @@ public class Problem18 {
      * @return 생성된 PriorityQueue
      */
     public static Queue<Integer> createPriorityQueueFromStream(int[] numbers) {
-        // 여기에 코드 작성
-        return null;
+        return Arrays.stream(numbers)
+                .boxed()
+                .collect(Collectors.toCollection(PriorityQueue::new));
     }
 }

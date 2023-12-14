@@ -1,6 +1,9 @@
 package problem.easy;
 
+import java.util.Arrays;
+import java.util.HashSet;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 public class Problem16 {
 
@@ -11,7 +14,8 @@ public class Problem16 {
      * @return 생성된 HashSet
      */
     public static Set<Integer> createHashSetFromStream(int[] numbers) {
-        // 여기에 코드 작성
-        return null;
+        return Arrays.stream(numbers)
+                .boxed()
+                .collect(Collectors.toCollection(HashSet::new));
     }
 }

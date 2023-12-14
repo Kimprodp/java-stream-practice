@@ -2,6 +2,7 @@ package problem.easy;
 
 import java.util.Optional;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 public class Problem11 {
 
@@ -12,7 +13,8 @@ public class Problem11 {
      * @return 10보다 큰 첫 번째 수 (존재하지 않으면 Optional.empty())
      */
     public static Optional<Integer> findFirstGreaterThanTen(Set<Integer> numbers) {
-        // 여기에 코드 작성
-        return Optional.empty();
+        return numbers.stream()
+                .filter(number -> number > 10)
+                .findFirst();
     }
 }
